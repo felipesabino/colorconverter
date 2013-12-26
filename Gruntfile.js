@@ -5,11 +5,16 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
-    banner: '/*! <%%= pkg.name %> - v<%%= pkg.version %> - ' +
-      '<%%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%%= grunt.template.today("yyyy") %> <%%= pkg.author.name %>;' +
-      ' Licensed <%%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+
+    // Metadata
+    pkg: grunt.file.readJSON('package.json'),
+    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+      '* Licensed <%= pkg.licenses[0].type %> */\n',
+
+    // Tasks configuration
     karma: {
       unit: {
         configFile: 'karma.conf.js',
@@ -33,6 +38,10 @@ module.exports = function (grunt) {
       }
     },
     concat: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: true
+      },
       build: {
         src: '.tmp/*.js',
         dest: 'color-converter.js'
@@ -44,6 +53,10 @@ module.exports = function (grunt) {
       }
     },
     uglify: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: true
+      },
       build: {
         src: 'color-converter.js',
         dest: 'color-converter.min.js'

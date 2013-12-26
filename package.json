@@ -2,11 +2,13 @@
   "name": "ColorConverter",
   "description": "Color Conversion between Hex, RGB and CMYK",
   "version": "0.1.0",
+  "homepage": "https://github.com/felipesabino/colorconverter",
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt build"
   },
   "author": {
     "name": "Felipe Sabino",
