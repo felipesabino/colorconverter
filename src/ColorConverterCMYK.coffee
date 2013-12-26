@@ -61,4 +61,4 @@
     h = if is_valid(cmyk) then CC.cmyk_to_hex(cmyk) else cmyk
     return new CC(h)
 
-)(ColorConverter)
+)(colorconverter)

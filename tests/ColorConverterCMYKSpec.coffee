@@ -1,25 +1,25 @@
-describe 'ColorConverterCMYK', ->
+describe 'colorconverterCMYK', ->
 
   it 'can convert Hex to CMYK', ->
-    cmyk = ColorConverter.hex_to_cmyk('#8a796b')
+    cmyk = colorconverter.hex_to_cmyk('#8a796b')
     expect(cmyk.c).toBe 0
     expect(cmyk.m).toBe 12
     expect(cmyk.y).toBe 22
     expect(cmyk.k).toBe 46
 
   it 'can convert CMYK to Hex', ->
-    hex = ColorConverter.cmyk_to_hex {c: 0, m: 12, y: 22, k: 46 }
+    hex = colorconverter.cmyk_to_hex {c: 0, m: 12, y: 22, k: 46 }
     expect(hex).toBe '#8a796b'
 
   it 'can retrieve a new CMYK color from Hex string', ->
-    result = ColorConverter.from_cmyk('#8a796b').cmyk()
+    result = colorconverter.from_cmyk('#8a796b').cmyk()
     expect(result.c).toBe 0
     expect(result.m).toBe 12
     expect(result.y).toBe 22
     expect(result.k).toBe 46
 
   it 'can retrieve a new CMYK color from CMYK values', ->
-    color = ColorConverter.from_cmyk {c: 0, m: 12, y: 22, k: 46 }
+    color = colorconverter.from_cmyk {c: 0, m: 12, y: 22, k: 46 }
 
     hex = color.hex()
     expect(hex).toBe '#8a796b'
@@ -31,9 +31,9 @@ describe 'ColorConverterCMYK', ->
     expect(cmyk.k).toBe 46
 
   it 'can say if a CMYK color is valid', ->
-    expect(ColorConverter.from_cmyk({c: 50, m: 30, y: 50, k: 50}).is_valid()).toBe true
-    expect(ColorConverter.from_cmyk({c: 50, m: 30, y: 50}).is_valid()).toBe false
-    expect(ColorConverter.from_cmyk({c: 50, m: 30, k: 50}).is_valid()).toBe false
-    expect(ColorConverter.from_cmyk({c: 50, y: 50, k: 50}).is_valid()).toBe false
-    expect(ColorConverter.from_cmyk({m: 30, y: 50, k: 50}).is_valid()).toBe false
-    expect(ColorConverter.from_cmyk({}).is_valid()).toBe false
+    expect(colorconverter.from_cmyk({c: 50, m: 30, y: 50, k: 50}).is_valid()).toBe true
+    expect(colorconverter.from_cmyk({c: 50, m: 30, y: 50}).is_valid()).toBe false
+    expect(colorconverter.from_cmyk({c: 50, m: 30, k: 50}).is_valid()).toBe false
+    expect(colorconverter.from_cmyk({c: 50, y: 50, k: 50}).is_valid()).toBe false
+    expect(colorconverter.from_cmyk({m: 30, y: 50, k: 50}).is_valid()).toBe false
+    expect(colorconverter.from_cmyk({}).is_valid()).toBe false

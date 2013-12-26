@@ -31,4 +31,4 @@
     h = if is_valid(rgb) then CC.rgb_to_hex(rgb) else rgb
     return new CC(h)
 
-)(ColorConverter)
+)(colorconverter)
