@@ -1,5 +1,5 @@
-/*! ColorConverter - v0.1.0 - 2013-12-26
-* https://github.com/felipesabino/colorconverter
+/*! colorconverterjs - v0.1.1 - 2013-12-26
+* http://felipesabino.github.io/colorconverter
 * Copyright (c) 2013 Felipe Sabino
 * Licensed MIT */
 var colorconverter;
