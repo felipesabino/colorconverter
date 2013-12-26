@@ -4,8 +4,14 @@ Easy color conversion between Hex, RGB and CMYK
 
 ## Instaling
 
+via [npm](https://npmjs.org/)
+```Shell
+$ npm install colorconverterjs
 ```
-// to-do
+
+via [Bower](http://bower.io/)
+```Shell
+$ bower install colorconverterjs
 ```
 
 ## Using
