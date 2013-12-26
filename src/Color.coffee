@@ -1,4 +1,4 @@
-window.Color = class Color
+Color = class
 
   hex_color: null
 
@@ -15,7 +15,7 @@ window.Color = class Color
 
   hex: () ->
     return @hex_color
-    
+
   # Static
   @random: () ->
     rnd = '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)

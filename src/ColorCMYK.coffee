@@ -1,4 +1,4 @@
-((C) -> 
+((C) ->
 
   # Converters
 
@@ -13,7 +13,7 @@
     m = 0 if (m <= 0)
     y = 0 if (y <= 0)
     k = 0 if (k <= 0)
-   
+
     c = 1 if (c > 1)
     m = 1 if (m > 1)
     y = 1 if (y > 1)
@@ -29,7 +29,7 @@
     return C.rgb_to_hex(rgb)
 
   C.hex_to_cmyk = (hex) ->
-    
+
     rgb = C.hex_to_rgb(hex)
 
     cmyk = {}
@@ -54,11 +54,11 @@
         return if (cmyk? && cmyk.c? && cmyk.m? && cmyk.y? && cmyk.k?) then true else false
 
     h = if is_valid(cmyk) then C.cmyk_to_hex(cmyk) else cmyk
-    return new Color(h)
+    return new C(h)
 
   # Accessor
 
-  C.prototype.cmyk = () ->
+  C::cmyk = () ->
     return C.hex_to_cmyk(@hex())
 
 )(Color)

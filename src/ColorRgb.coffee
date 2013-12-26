@@ -23,11 +23,11 @@
         return if (rgb? && rgb.r? && rgb.g? && rgb.b?) then true else false
 
     h = if is_valid(rgb) then C.rgb_to_hex(rgb) else rgb
-    return new Color(h)
+    return new C(h)
 
   # Accessor
 
-  C.prototype.rgb = () ->
+  C::rgb = () ->
     return C.hex_to_rgb(@hex())
 
 )(Color)
