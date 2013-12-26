@@ -1,8 +1,13 @@
-((C) ->
+((CC) ->
 
-  # Converters
+  # Accessor
 
-  C.cmyk_to_hex = (cmyk) ->
+  CC::cmyk = () ->
+    return CC.hex_to_cmyk(@hex())
+
+  # Static Converters
+
+  CC.cmyk_to_hex = (cmyk) ->
 
     c = cmyk.c / 100
     m = cmyk.m / 100
@@ -26,11 +31,11 @@
     rgb.r = Math.round(rgb.r * 255)
     rgb.g = Math.round(rgb.g * 255)
     rgb.b = Math.round(rgb.b * 255)
-    return C.rgb_to_hex(rgb)
+    return CC.rgb_to_hex(rgb)
 
-  C.hex_to_cmyk = (hex) ->
+  CC.hex_to_cmyk = (hex) ->
 
-    rgb = C.hex_to_rgb(hex)
+    rgb = CC.hex_to_rgb(hex)
 
     cmyk = {}
     r = rgb.r / 255
@@ -48,17 +53,12 @@
 
   # Creation
 
-  C.from_cmyk = (cmyk) ->
+  CC.from_cmyk = (cmyk) ->
 
     is_valid = (cmyk) ->
         return if (cmyk? && cmyk.c? && cmyk.m? && cmyk.y? && cmyk.k?) then true else false
 
-    h = if is_valid(cmyk) then C.cmyk_to_hex(cmyk) else cmyk
-    return new C(h)
+    h = if is_valid(cmyk) then CC.cmyk_to_hex(cmyk) else cmyk
+    return new CC(h)
 
-  # Accessor
-
-  C::cmyk = () ->
-    return C.hex_to_cmyk(@hex())
-
-)(Color)
+)(ColorConverter)

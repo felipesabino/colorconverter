@@ -1,4 +1,4 @@
-Color = class
+ColorConverter = class
 
   hex_color: null
 
@@ -19,4 +19,4 @@ Color = class
   # Static
   @random: () ->
     rnd = '#'+ ('000000' + (Math.random()*0xFFFFFF<<0).toString(16)).slice(-6)
-    return new Color(rnd)
+    return new ColorConverter(rnd)
