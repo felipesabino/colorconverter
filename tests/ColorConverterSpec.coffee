@@ -1,7 +1,11 @@
 describe 'ColorConverter', ->
 
-  it 'can create a color from Hex string', ->
+  it 'can create a color from Hex string using constructor', ->
     result = new ColorConverter('#BADA55').hex()
+    expect(result).toBe '#BADA55'
+
+  it 'can create a color from Hex string using acessor method', ->
+    result = ColorConverter.from_hex('#BADA55').hex()
     expect(result).toBe '#BADA55'
 
   it 'can retrieve a random Hex color string', ->
