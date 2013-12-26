@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Colorconverter by felipesabino</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Colorconverter</h1>
+          <h2>Color Conversion between Hex, RGB and CMYK</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/felipesabino/colorconverter/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/felipesabino/colorconverter/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/felipesabino/colorconverter" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="color-converter" class="anchor" href="#color-converter"><span class="octicon octicon-link"></span></a>Color Converter</h1>
+
+<p>Easy color conversion between Hex, RGB and CMYK</p>
+
+<h2>
+<a name="instaling" class="anchor" href="#instaling"><span class="octicon octicon-link"></span></a>Instaling</h2>
+
+<pre><code>// to-do
+</code></pre>
+
+<h2>
+<a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h2>
+
+<h3>
+<a name="instance-methods" class="anchor" href="#instance-methods"><span class="octicon octicon-link"></span></a>Instance methods</h3>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">colorconverter</span><span class="p">.</span><span class="nx">from_rgb</span><span class="p">({</span><span class="nx">r</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mi">30</span> <span class="p">}).</span><span class="nx">hex</span><span class="p">()</span>
+<span class="c1">// "#0a141e"</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">from_hex</span><span class="p">(</span><span class="s1">'#0a141e'</span><span class="p">).</span><span class="nx">rgb</span><span class="p">()</span>
+<span class="c1">// {r: 10, g: 20, b:30 }</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">from_hex</span><span class="p">(</span><span class="s1">'#8a796b'</span><span class="p">).</span><span class="nx">cmyk</span><span class="p">()</span>
+<span class="c1">// {c: 0, m: 12, y: 22, k: 46 }</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">from_cmyk</span><span class="p">({</span><span class="nx">c</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">m</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span> <span class="nx">k</span><span class="o">:</span> <span class="mi">46</span> <span class="p">}).</span><span class="nx">hex</span><span class="p">()</span>
+<span class="c1">// "#8a796b"</span>
+</pre></div>
+
+<ul>
+<li>
+<p>Available methods</p>
+
+<ul>
+<li>
+<code>hex()</code> - returns a string with a hexadecimal value</li>
+<li>
+<code>rbg()</code> - returns an object with a RGB value</li>
+<li>
+<code>cmyk()</code> - returns an object with a CMYK value</li>
+</ul>
+</li>
+</ul><h3>
+<a name="static-methods" class="anchor" href="#static-methods"><span class="octicon octicon-link"></span></a>Static methods</h3>
+
+<div class="highlight highlight-JavaScript"><pre><span class="nx">colorconverter</span><span class="p">.</span><span class="nx">rgb_to_hex</span><span class="p">({</span><span class="nx">r</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">g</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mi">30</span> <span class="p">})</span>
+<span class="c1">// "#0a141e"</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">hex_to_rgb</span><span class="p">(</span><span class="s1">'#0a141e'</span><span class="p">)</span>
+<span class="c1">// {r: 10, g: 20, b:30 }</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">hex_to_cmyk</span><span class="p">(</span><span class="s1">'#8a796b'</span><span class="p">)</span>
+<span class="c1">// {c: 0, m: 12, y: 22, k: 46 }</span>
+
+<span class="nx">colorconverter</span><span class="p">.</span><span class="nx">cmyk_to_hex</span><span class="p">({</span><span class="nx">c</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">m</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span> <span class="nx">k</span><span class="o">:</span> <span class="mi">46</span> <span class="p">})</span>
+<span class="c1">// "#8a796b"</span>
+</pre></div>
+
+<ul>
+<li>
+<p>Available conversion methods</p>
+
+<ul>
+<li>
+<code>rgb_to_hex(object)</code> - returns a string with a hexadecimal value for the RGB color object</li>
+<li>
+<code>hex_to_rgb(string)</code> - returns an object with the RGB color values from a Hexadecimal string</li>
+<li>
+<code>cmyk_to_hex(object)</code> - returns a string with a hexadecimal value for the CMYK color object</li>
+<li>
+<code>hex_to_cmyk(string)</code> - returns an object with the CMYK color values from a Hexadecimal string</li>
+</ul>
+</li>
+<li>
+<p>Available helper methods</p>
+
+<ul>
+<li>
+<code>from_hex(string)</code> - creates an instance of the converter using the hexadecimal value received as the seed</li>
+<li>
+<code>from_rgb(object)</code> - creates an instance of the converter using the RGB object received as the seed</li>
+<li>
+<code>from_cmyk(object)</code> - creates an instance of the converter using the CMYK object received as the seed</li>
+</ul>
+</li>
+</ul><h2>
+<a name="manually-compile" class="anchor" href="#manually-compile"><span class="octicon octicon-link"></span></a>Manually compile</h2>
+
+<p>configure:</p>
+
+<pre lang="Shell"><code>$ npm install
+</code></pre>
+
+<p>test:</p>
+
+<pre lang="Shell"><code>$ grunt test
+</code></pre>
+
+<p>compile:</p>
+
+<pre lang="Shell"><code>$ grunt build
+</code></pre>
+        </section>
+
+        <footer>
+          Colorconverter is maintained by <a href="https://github.com/felipesabino">felipesabino</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-46695158-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
+    </div>
+  </body>
+</html>
