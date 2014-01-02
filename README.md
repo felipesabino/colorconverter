@@ -1,5 +1,7 @@
 # Color Converter
 
+[![Build Status](https://travis-ci.org/felipesabino/colorconverter.png?branch=master)](https://travis-ci.org/felipesabino/colorconverter)
+
 Easy color conversion between Hex, RGB and CMYK
 
 ## Instaling
