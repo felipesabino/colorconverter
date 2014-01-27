@@ -5,6 +5,10 @@
 
 Easy color conversion between Hex, RGB and CMYK
 
+## Demo
+
+Checkout this usage [demo on plnkr](http://embed.plnkr.co/hj0fZD/preview)
+
 ## Instaling
 
 via [npm](https://npmjs.org/)
